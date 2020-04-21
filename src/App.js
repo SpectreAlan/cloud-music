@@ -1,12 +1,16 @@
 import React from 'react';
+import Reset from './assets/styles/cssReset'
 
 function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div style={{ 'color': 'red', 'width': '100px' }}>123</div>
-      </header>
-    </div>
+    <>
+      <Reset/>
+      <div className="App">
+        <header className="App-header">
+          <div>123</div>
+        </header>
+      </div>
+    </>
   );
 }
 
