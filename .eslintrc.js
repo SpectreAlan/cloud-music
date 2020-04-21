@@ -54,6 +54,8 @@ module.exports = {
         "allow": ["log", "warn", "error", "info"]
       }
     ],
+    // obj大括号内是否允许空格
+    "object-curly-spacing": ["error", "always"],
     // 禁止 function 定义中出现重名参数
     "no-dupe-args": 2,
     // 禁止对象字面量中出现重复的 key
