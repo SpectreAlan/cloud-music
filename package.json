@@ -138,5 +138,19 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "better-scroll": "^1.15.2",
+    "immutable": "^4.0.0-rc.12",
+    "prop-types": "^15.7.2",
+    "react-lazyload": "^2.6.7",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.1.2",
+    "react-router-config": "^5.1.1",
+    "redux": "^4.0.5",
+    "redux-immutable": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "swiper": "^5.3.7"
   }
 }
