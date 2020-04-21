@@ -4,5 +4,5 @@ export const Content = styled.div`
   top: 2rem;
   bottom: 0;
   width: 100%;
-  border: 1px solid green;
+  padding-top: 0.2rem;
 `
