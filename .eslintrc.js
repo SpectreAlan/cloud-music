@@ -185,7 +185,7 @@ module.exports = {
     ],
     // 不允许多个空行
     "no-multiple-empty-lines": [2, {
-      "max": 2
+      "max": 1
     }],
     // 不允许否定的表达式
     "no-negated-condition": 0,
@@ -203,6 +203,7 @@ module.exports = {
     "no-ternary": 0,
     // 禁用行尾空格
     "no-trailing-spaces": 2,
+    "no-multi-spaces": 2,
     // 禁止标识符中有悬空下划线_bar
     "no-underscore-dangle": 0,
     // 禁止可以在有更简单的可替代的表达式时使用三元操作符
@@ -318,7 +319,8 @@ module.exports = {
 
 
     // 强制使用一致的换行风格
-    "linebreak-style": [2, "unix"],
+    "linebreak-style": [0, "Windows"],
+    "no-extra-semi": 2,
     //在JSX中强制布尔属性符号
     "react/jsx-boolean-value": 2,
     //在JSX中验证右括号位置
