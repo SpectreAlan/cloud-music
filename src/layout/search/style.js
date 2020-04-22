@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Top = styled.div`
-height:2rem;
-box-sizing: border-box;
+  height:3rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.2rem 0.4rem;
+  padding: 0.4rem 0.6rem;
   &>i {
     color: slategray;
     font-size: 1.2rem;
