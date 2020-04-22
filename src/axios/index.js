@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {request} from '../config';
+import { request } from '../config';
 class Request {
   constructor () {
     this.instance = axios.create({
@@ -31,7 +31,7 @@ class Request {
             'Content-Type': 'multipart/form-data'
           }
         })
-        .then(({data}) => {
+        .then(({ data }) => {
           resolve(data);
         })
         .catch((error) => {
@@ -45,8 +45,8 @@ class Request {
   get (url, params = {}) {
     return new Promise((resolve, reject) => {
       this.instance
-        .get(url, {params: {...params}})
-        .then(({data}) => {
+        .get(url, { params: { ...params } })
+        .then(({ data }) => {
           resolve(data);
         })
         .catch((error) => {
@@ -60,8 +60,8 @@ class Request {
   post (url, params = {}) {
     return new Promise((resolve, reject) => {
       this.instance
-        .post(url, {...params})
-        .then(({data}) => {
+        .post(url, { ...params })
+        .then(({ data }) => {
           resolve(data);
         })
         .catch((error) => {

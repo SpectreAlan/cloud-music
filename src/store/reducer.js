@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux-immutable';
-import {reducer as recommendReducer} from './modules/recommend';
+import { combineReducers } from 'redux-immutable';
+import { reducer as findReducer } from './modules/find';
 
 export default combineReducers({
-  recommend: recommendReducer,
+  find: findReducer,
 });
