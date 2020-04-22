@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Find from '../views/Find/';
 import Home from '../views/Home/';
-import Recommend from '../views/Recommend/';
 
 export default [
   {
