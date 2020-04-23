@@ -2,7 +2,7 @@ import React from 'react';
 import { renderRoutes } from 'react-router-config';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import { Tab, TabItem } from './style';
+import { Tab } from './style';
 
 const Home = (props) => {
   const { route } = props;
@@ -10,29 +10,34 @@ const Home = (props) => {
     <>
       <Tab>
         <NavLink to="/find" activeClassName="selected">
-          <TabItem>
+          <div>
+            <i className='iconfont'>&#xe60e;</i>
             <span> 发现 </span>
-          </TabItem>
+          </div>
         </NavLink>
         <NavLink to="/video" activeClassName="selected">
-          <TabItem>
+          <div>
+            <i className='iconfont'>&#xe60e;</i>
             <span> 视频 </span>
-          </TabItem>
+          </div>
         </NavLink>
         <NavLink to="/mine" activeClassName="selected">
-          <TabItem>
+          <div>
+            <i className='iconfont'>&#xe60e;</i>
             <span> 我的 </span>
-          </TabItem>
+          </div>
         </NavLink>
         <NavLink to="/cloud" activeClassName="selected">
-          <TabItem>
+          <div>
+            <i className='iconfont'>&#xe60e;</i>
             <span> 云村 </span>
-          </TabItem>
+          </div>
         </NavLink>
         <NavLink to="/account" activeClassName="selected">
-          <TabItem>
+          <div>
+            <i className='iconfont'>&#xe60e;</i>
             <span> 账号 </span>
-          </TabItem>
+          </div>
         </NavLink>
       </Tab>
       {renderRoutes(route.routes)}
