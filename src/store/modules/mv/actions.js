@@ -13,8 +13,10 @@ export const changeLoading = (data) => ({
 });
 
 export const getMvList = () => (dispatch) => {
+  dispatch(changeLoading(true));
   Request.mv().then((res) => {
     dispatch(changeMvList(res.data));
+    dispatch(changeLoading(false));
   })
     .catch(() => {
       console.log('mv数据传输错误');
