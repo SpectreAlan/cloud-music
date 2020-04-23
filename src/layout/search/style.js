@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import style from '../../assets/styles/global-style';
 
 export const Top = styled.div`
   height:3rem;
@@ -20,6 +21,8 @@ export const Top = styled.div`
     border-radius: 2rem;
     padding-left: 1rem;
     height:1.4rem;
+    color: ${style['font-color-light']};
+    background: #ececec;
   }
   .circle{
     width: 1.4rem;

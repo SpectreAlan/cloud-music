@@ -11,23 +11,23 @@ export const Tab = styled.div`
   background: #ececec;
   width: 100%;
   box-sizing: border-box;
-  padding: 0.4rem;
+  padding: 0.3rem;
   a{
     color: ${style['font-color-light']};
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     i{
       font-size: 1.1rem;
       display: block;
-      line-height: 1.4rem;
-      width: 1.4rem;
-      height:1.4rem;
+      line-height: 1.6rem;
+      width: 1.6rem;
+      height:1.6rem;
       background: transparent;
       text-align: center;
       border-radius: 50%;
     }
     span{
-      line-height: 1.2rem;
+      line-height: 1.1rem;
     }
     &.selected{
        color: ${style['theme-color']};

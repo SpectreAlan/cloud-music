@@ -23,7 +23,7 @@ export const Container = styled.ul`
   padding: 0.5rem;
   display: flex;
   flex-wrap: nowrap;
-  width: ${(props) => props.count * 5 + 'rem'};
+  width: ${(props) => props.count * 5.4 + 'rem'};
   li{
     width: 5rem;
     position: relative;

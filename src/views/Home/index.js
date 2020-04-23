@@ -11,13 +11,13 @@ const Home = (props) => {
       <Tab>
         <NavLink to="/find" activeClassName="selected">
           <div>
-            <i className='iconfont'>&#xe60e;</i>
+            <i className='iconfont'>&#xe75a;</i>
             <span> 发现 </span>
           </div>
         </NavLink>
         <NavLink to="/video" activeClassName="selected">
           <div>
-            <i className='iconfont'>&#xe60e;</i>
+            <i className='iconfont'>&#xe637;</i>
             <span> 视频 </span>
           </div>
         </NavLink>
@@ -29,13 +29,13 @@ const Home = (props) => {
         </NavLink>
         <NavLink to="/cloud" activeClassName="selected">
           <div>
-            <i className='iconfont'>&#xe60e;</i>
+            <i className='iconfont'>&#xe600;</i>
             <span> 云村 </span>
           </div>
         </NavLink>
         <NavLink to="/account" activeClassName="selected">
           <div>
-            <i className='iconfont'>&#xe60e;</i>
+            <i className='iconfont'>&#xe66c;</i>
             <span> 账号 </span>
           </div>
         </NavLink>

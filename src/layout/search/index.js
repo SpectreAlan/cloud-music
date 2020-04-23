@@ -4,7 +4,7 @@ import { Top } from './style'
 
 const Search = (props) => (
   <Top>
-    <i className='iconfont'>&#xe60e;</i>
+    <i className='iconfont'>&#xe61c;</i>
     <input type="text" placeholder='123' />
     <div className="circle"/>
   </Top>
