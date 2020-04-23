@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import LazyLoad, { forceCheck } from 'react-lazyload'
 import { getMvList } from '../../store/modules/mv/actions'
 import Search from '../../layout/search';
 import Scroll from '../../components/Scroll';
@@ -8,12 +9,15 @@ import { Content, Img, Control } from './style';
 import { getCount, formatDuration } from '../../utils';
 
 const mvScroll = (list) => (<Content>
-  <Scroll className="list">
+  <Scroll className="list" onScroll={forceCheck}>
     <ul>
       {
         list.map((item, index) => (
           <li key={index}>
-            <Img cover={item.cover}>
+            <Img>
+              <LazyLoad placeholder={<img width="100%" height="100%" src={require('../../assets/images/lazy.png')} alt="music"/>}>
+                <img src={item.cover} width="100%" height="100%" alt="music"/>
+              </LazyLoad>
               <div className="title">音乐咨询</div>
               <i className='iconfont play'>&#xe637;</i>
               <div className='count'>

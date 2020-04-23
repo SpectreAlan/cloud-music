@@ -3,6 +3,7 @@ import Scroll from '../Scroll';
 import PropTypes from 'prop-types';
 import { Container, Top } from './style'
 import { getCount } from '../../utils'
+import LazyLoad, { forceCheck } from 'react-lazyload';
 const RecommendSongLists = (props) => {
   const { list, title } = props
   return (
@@ -13,7 +14,7 @@ const RecommendSongLists = (props) => {
           <b>查看更多</b>
         </div>
       </Top>
-      <Scroll direction={'horizontal'}>
+      <Scroll direction={'horizontal'} onScroll={forceCheck}>
         <Container count={list.length}>
           {
             list.map((item, index) => (
@@ -24,7 +25,9 @@ const RecommendSongLists = (props) => {
                   <i className='iconfont'>&#xe60e;</i>
                   <span>{getCount(item.playCount)}</span>
                 </div>
-                <img src={item.coverImgUrl} alt=""/>
+                <LazyLoad placeholder={<img width="100%" height="100%" src={require('../../assets/images/lazy.png')} alt="music"/>}>
+                  <img src={item.coverImgUrl} width="100%" height="100%" alt="music"/>
+                </LazyLoad>
                 <span>{item.name}</span>
               </li>
             ))

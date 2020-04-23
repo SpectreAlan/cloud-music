@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
+import { forceCheck } from 'react-lazyload'
 import Search from '../../layout/search'
 import Slider from '../../components/Slider';
 import { getBannerList, getRecommendList, getRecommendSongs } from '../../store/modules/find/actions'
@@ -29,7 +30,7 @@ const Find = (props) => {
     <>
       <Search/>
       <Content>
-        <Scroll className="list">
+        <Scroll className="list" onScroll={forceCheck}>
           <div>
             <Slider bannerList={banner}/>
             <HorizonRouter list={recommendTypes}/>

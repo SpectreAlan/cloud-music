@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Top } from '../RecommendSongLists/style'
 import { List } from './style'
+import LazyLoad from 'react-lazyload';
 const RecommendSongs = (props) => {
   const { list, title } = props
   return (
@@ -32,7 +33,9 @@ const RecommendSongs = (props) => {
                   }
                 </p>
               </div>
-              <img src={item.picUrl} alt=""/>
+              <LazyLoad placeholder={<img width="100%" height="100%" src={require('../../assets/images/lazy.png')} alt="music"/>}>
+                <img src={item.picUrl} width="100%" height="100%" alt="music"/>
+              </LazyLoad>
               <i className='iconfont'>&#xe60f;</i>
             </li>
           ))

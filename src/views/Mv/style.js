@@ -23,12 +23,14 @@ export const Content = styled.div`
 `
 export const Img = styled.div`
   height: 8rem;
-  border-radius: 0.4rem;
-  background: url("${((props) => props.cover)}");
-  background-size: cover;
   position: relative;
   font-size: 0.6rem;
   color:#fff;
+  img{
+    height: 100%;
+    width: 100%;
+    border-radius: 0.4rem;
+  }
   .title{
     position: absolute;
     top: 0.4rem;
