@@ -15,7 +15,7 @@ const Home = (props) => {
             <span> 发现 </span>
           </div>
         </NavLink>
-        <NavLink to="/video" activeClassName="selected">
+        <NavLink to="/mv" activeClassName="selected">
           <div>
             <i className='iconfont'>&#xe637;</i>
             <span> 视频 </span>

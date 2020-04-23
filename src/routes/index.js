@@ -1,7 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Find from '../views/Find/';
 import Home from '../views/Home/';
+import Find from '../views/Find/';
+import Mv from '../views/Mv/';
 
 export default [
   {
@@ -19,6 +20,10 @@ export default [
       {
         path: '/find',
         component: Find,
+      },
+      {
+        path: '/mv',
+        component: Mv,
       },
     ]
   }
