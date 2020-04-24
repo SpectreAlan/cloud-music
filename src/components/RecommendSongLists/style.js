@@ -24,6 +24,7 @@ export const Container = styled.ul`
   display: flex;
   flex-wrap: nowrap;
   width: ${(props) => props.count * 5.4 + 'rem'};
+  overflow: hidden;
   li{
     width: 5rem;
     position: relative;

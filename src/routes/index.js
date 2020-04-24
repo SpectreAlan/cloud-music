@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Home from '../views/Home/';
 import Find from '../views/Find/';
 import Mv from '../views/Mv/';
+import Mine from '../views/Mine/';
 
 export default [
   {
@@ -24,6 +25,10 @@ export default [
       {
         path: '/mv',
         component: Mv,
+      },
+      {
+        path: '/mine',
+        component: Mine,
       },
     ]
   }

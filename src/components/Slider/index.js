@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import 'swiper/css/swiper.css';
 import Swiper from 'swiper';
 import { SliderContainer } from './style'
+import LazyLoad from 'react-lazyload';
 
 function Slider (props) {
   const [sliderSwiper, setSliderSwiper] = useState(null);
@@ -28,7 +29,9 @@ function Slider (props) {
             bannerList.map((slider, i) => (
               <div className="swiper-slide" key={i}>
                 <div className="slider-nav">
-                  <img src={slider.imageUrl} width="100%" height="100%" alt="推荐" />
+                  <LazyLoad placeholder={<img width="100%" height="100%" src={require('../../assets/images/lazy.png')} alt="music"/>}>
+                    <img src={slider.imageUrl} width="100%" height="100%" alt="music"/>
+                  </LazyLoad>
                 </div>
               </div>
             ))

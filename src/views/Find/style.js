@@ -2,9 +2,8 @@ import styled from 'styled-components';
 export const Content = styled.div`
   position: fixed;
   top: 3rem;
-  bottom: 0;
+  bottom: 3rem;
   width: 100%;
   overflow: hidden;
-  padding-bottom: 3rem;
 `
 

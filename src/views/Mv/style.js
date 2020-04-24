@@ -3,15 +3,18 @@ import styled from 'styled-components';
 export const Content = styled.div`
   position: fixed;
   top: 3rem;
-  bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: 3rem;
   width: 100%;
+  z-index: 10;
   overflow: hidden;
-  padding-bottom: 3rem;
   ul{
-    padding: 0.8rem;
+    padding: 0 0.8rem;
     li{
       margin-bottom: 0.6rem;
       position: relative;
+      height:10rem;
       >.title{
         font-size: 0.8rem;
         color: black;
