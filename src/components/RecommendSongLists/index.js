@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import { Container, Top } from './style'
 import { getCount } from '../../utils'
 import LazyLoad, { forceCheck } from 'react-lazyload';
-function show () {
-  console.log(111)
-}
+
 const RecommendSongLists = (props) => {
   const { list, title } = props
   return (
@@ -29,7 +27,6 @@ const RecommendSongLists = (props) => {
                   <span>{getCount(item.playCount)}</span>
                 </div>
                 <LazyLoad
-                  onContentVisible={show()}
                   placeholder={<img width="100%" height="100%" src={require('../../assets/images/lazy.png')} alt="music"/>}
                 >
                   <img src={item.coverImgUrl} width="100%" height="100%" alt="music"/>
