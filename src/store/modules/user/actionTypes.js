@@ -1,0 +1,5 @@
+export default {
+  CHANGE_LOGIN: 'user/CHANGE_LOGIN',
+  CHANGE_USER: 'video/CHANGE_USER',
+  CHANGE_LOADING: 'video/CHANGE_LOADING',
+}

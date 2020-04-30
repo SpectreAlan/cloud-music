@@ -2,8 +2,9 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Home from '../views/Home/';
 import Find from '../views/Find/';
-import Mv from '../views/Mv/';
+import Video from '../views/Video/';
 import Mine from '../views/Mine/';
+import Login from '../views/User/login'
 
 export default [
   {
@@ -23,13 +24,18 @@ export default [
         component: Find,
       },
       {
-        path: '/mv',
-        component: Mv,
+        path: '/video',
+        component: Video,
       },
       {
         path: '/mine',
         component: Mine,
       },
+      {
+        path: '/login',
+        exact: true,
+        component: Login,
+      }
     ]
-  }
+  },
 ];
