@@ -34,7 +34,7 @@ export const formatDuration = (t) => {
   let hours = parseInt(t / 3600)
   t = t % 3600
   let minutes = parseInt(t / 60)
-  let seconds = t % 60
+  let seconds = parseInt(t % 60)
   let sec = hours < 10 ? '0' + hours : hours
   let minStr = minutes < 10 ? '0' + minutes : minutes
   let hourStr = seconds < 10 ? '0' + seconds : seconds

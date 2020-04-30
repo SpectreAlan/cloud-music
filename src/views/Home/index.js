@@ -15,13 +15,13 @@ const Home = (props) => {
             <span> 发现 </span>
           </div>
         </NavLink>
-        <NavLink to="/mv" activeClassName="selected">
+        <NavLink to="/video" activeClassName="selected">
           <div>
             <i className='iconfont'>&#xe637;</i>
             <span> 视频 </span>
           </div>
         </NavLink>
-        <NavLink to="/mine" activeClassName="selected">
+        <NavLink to="/login" activeClassName="selected">
           <div>
             <i className='iconfont'>&#xe60e;</i>
             <span> 我的 </span>
