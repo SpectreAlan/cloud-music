@@ -16,9 +16,19 @@ const Login = () => {
 
   return (
     <Content>
+      <div className="top">
+        <i className='iconfont back' onClick={() => router.go(-1)}>&#xe63a;</i>
+        <span>Login with mobile</span>
+      </div>
       <ul className="container">
-        <li>账号<input type="text" placeholder='请输入手机号' onChange={(e) => setPhone(e.target.value)}/></li>
-        <li>密码<input type="password" placeholder='请输入密码' onChange={(e) => setPassword(e.target.value)}/></li>
+        <li>
+          <i className='iconfont phone'>&#xe609;</i>
+          <input type="text" placeholder='请输入手机号' onChange={(e) => setPhone(e.target.value)}/>
+        </li>
+        <li>
+          <i className='iconfont pwd'>&#xe60c;</i>
+          <input type="password" placeholder='请输入密码' onChange={(e) => setPassword(e.target.value)}/>
+        </li>
         <li><button onClick={() => loginRequest()}>登陆</button></li>
       </ul>
     </Content>
