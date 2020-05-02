@@ -9,7 +9,7 @@ const extendClick = () => `
       right: -10px;
     };
   `;
-const noWrap = () => `
+export const noWrap = () => `
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;

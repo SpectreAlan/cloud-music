@@ -29,6 +29,7 @@ export const getCurrentVideoList = (id) => (dispatch) => {
 };
 
 export const getTypes = () => (dispatch) => {
+  dispatch(changeLoading(true));
   Request.types().then((res) => {
     dispatch(changeTypesList(res.data));
   })
