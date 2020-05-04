@@ -5,6 +5,7 @@ import Find from '../views/Find/';
 import Video from '../views/Video/';
 import Mine from '../views/Mine/';
 import Login from '../views/User/login'
+import DailyRecommendation from '../views/DailyRecommendation'
 
 export default [
   {
@@ -35,6 +36,11 @@ export default [
         path: '/login',
         exact: true,
         component: Login,
+      },
+      {
+        path: '/dailyRecommendation',
+        exact: true,
+        component: DailyRecommendation,
       }
     ]
   },

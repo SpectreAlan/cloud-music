@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import style from '../../../assets/styles/global-style';
 
 const Out = styled.div`
   width: 12.5rem;
@@ -21,11 +20,11 @@ const Out = styled.div`
       width: 100%;
     }
     .icon{
-      font-size: 2rem;
+      font-size: 1.6rem;
       position: absolute;
-      top:1rem;
-      left: 1rem;
-      color: ${style['theme-color']};
+      top: 1.5rem;
+      left: 1.5rem;
+      color: #fff;
     }
   }
   ul{

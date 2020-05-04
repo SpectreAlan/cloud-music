@@ -6,7 +6,7 @@ const topSection = (profile) => (
       <img src={profile.avatarUrl} alt=""/>
       <div>
         <h2>{profile.nickname}</h2>
-        <span>{profile.province}</span>
+        <span>vip {profile.vipType}</span>
       </div>
     </div>
     <ul className="buttons">

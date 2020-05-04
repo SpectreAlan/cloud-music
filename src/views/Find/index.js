@@ -25,7 +25,18 @@ const Find = (props) => {
   }, [])
   const banner = bannerList.size ? bannerList.toJS() : []
   const recommend = recommendList.size ? recommendList.toJS() : []
-  const songs = recommendSongs.size ? recommendSongs.toJS() : []
+  const songsList = recommendSongs.size ? recommendSongs.toJS() : []
+  const songs = []
+
+  songsList.map((k) => {
+    const o = {}
+    o.name = k.name
+    o.artists = k.song.artists.map((k, i) => (i === 0 ? '' : '、') + k.name)
+    o.album = k.song.alias.join('/')
+    o.img = k.picUrl
+    songs.push(o)
+  })
+
   return (
     <>
       <Search/>
@@ -35,7 +46,7 @@ const Find = (props) => {
             <Slider bannerList={banner}/>
             <HorizonRouter list={recommendTypes}/>
             <RecommendSongLists list={recommend} title='为你精心挑选'/>
-            <RecommendSongs list={songs} title='根据你喜欢的歌曲推荐'/>
+            <RecommendSongs list={songs} title='根据你喜欢的歌曲推荐' albumVisible/>
           </div>
         </Scroll>
         {renderRoutes(props.route.routes)}

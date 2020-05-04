@@ -1,5 +1,5 @@
 export const recommendTypes = [
-  { name: '每日推荐', path: '/recommend', icon: '&#xe89e;' },
+  { name: '每日推荐', path: '/dailyRecommendation', icon: '&#xe89e;' },
   { name: '歌单', path: '/recommend', icon: '&#xe636;' },
   { name: '排行榜', path: '/recommend', icon: '&#xe62f;' },
   { name: '电台', path: '/recommend', icon: '&#xe65b;' },
