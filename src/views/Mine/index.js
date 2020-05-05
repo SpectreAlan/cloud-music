@@ -16,16 +16,18 @@ const Mine = () => {
   const profile = userInfo.toJS().profile
   const record = userRecord.size ? userRecord.toJS() : []
   const collect = userCollect.size ? userCollect.toJS() : []
-  const love = collect.shift().coverImgUrl
+  let love = null
+  const my = []
+  const other = []
   useEffect(() => {
     !userRecord.size && dispatch(getRecord({ uid: profile.userId, type: 1 }))
     !userCollect.size && dispatch(getCollect({ uid: profile.userId }))
+    love = collect.shift().coverImgUrl
+    for (let i = 0; i < collect.length; i++) {
+      collect[i]['ordered'] ? other.push(collect[i]) : my.push(collect[i])
+    }
   }, [])
-  const my = []
-  const other = []
-  for (let i = 0; i < collect.length; i++) {
-    collect[i]['ordered'] ? other.push(collect[i]) : my.push(collect[i])
-  }
+
   return (
     <>
       <Top>

@@ -4,13 +4,13 @@ import { Top } from '../RecommendSongLists/style'
 import { List } from './style'
 import LazyLoad from 'react-lazyload';
 const RecommendSongs = (props) => {
-  const { list, title, albumVisible } = props
+  const { list, title } = props
   return (
     <>
       <Top>
         <div className="top">
           <span>{title}</span>
-          <b><i className='iconfont'>&#xe60f;</i>播放全部</b>
+          <b><i className='iconfont'>&#xe60f;</i>播放全部</b>+
         </div>
       </Top>
       <List>
@@ -22,16 +22,14 @@ const RecommendSongs = (props) => {
               <div className='play'>
                 <div>
                   {item.name}
-                  {
-                    albumVisible ? (<span>-
-                      {
-                        item.artists
-                      }</span>) : null
-                  }
+                  <span>-
+                    {
+                      item.artists
+                    }</span>
                 </div>
                 <p>
                   {
-                    albumVisible ? item.album : item.artists
+                    item.album
                   }
                 </p>
               </div>
@@ -49,6 +47,5 @@ const RecommendSongs = (props) => {
 RecommendSongs.propTypes = {
   list: PropTypes.array,
   title: PropTypes.string,
-  albumVisible: PropTypes.bool,
 }
 export default React.memo(RecommendSongs)
