@@ -5,7 +5,7 @@ import style from '../../assets/styles/global-style';
 import PropTypes from 'prop-types';
 export const List = styled.ul`
   background: #fff;
-  padding: 0 0.5rem 0.5rem;
+  padding: 0.5rem;
   li{
     display: flex;
     justify-content: space-between;

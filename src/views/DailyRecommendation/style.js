@@ -6,10 +6,9 @@ export const Top = styled.div`
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 0.4rem;
-  background-size: 100%;
   z-index: 8;
   overflow: hidden;
+  height: 3rem;
   span{
     opacity: 0;
   }
@@ -25,11 +24,19 @@ export const Top = styled.div`
     top: 0;
     left: 0;
     width: 100%;
+    height: 14rem;
+    z-index: 9;
+  }
+  .circle{
+    width:3rem;
+    height: 3rem;
+    background: slategray;
+    border-radius: 50%;
   }
 `
 export const Control = styled.div`
   position: fixed;
-  top: 200px;
+  top: 9.7rem;
   left: 0;
   height: 3rem;
   line-height: 3rem;
@@ -49,6 +56,7 @@ export const Bg = styled.div`
   height: 14rem;
   width: 100%;
   z-index: 6;
+  overflow: hidden;
   img{
     width: 100%;
   }
