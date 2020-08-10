@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import { fromJS } from 'immutable';
-import Request from '../../../api/user';
+import { loginReq, record, collect } from '../../../api/user';
 
 export const changeUser = (data) => ({
   type: actionTypes.CHANGE_USER,
@@ -29,7 +29,7 @@ export const changeState = (data) => ({
 
 export const login = (param, router) => (dispatch) => {
   dispatch(changeLoading(true));
-  Request.login(param).then((res) => {
+  loginReq(param).then((res) => {
     dispatch(changeUser(res));
     dispatch(changeLoading(false));
     dispatch(changeState(true));
@@ -42,7 +42,7 @@ export const login = (param, router) => (dispatch) => {
 
 export const getRecord = (param) => (dispatch) => {
   dispatch(changeLoading(true));
-  Request.record(param).then((res) => {
+  record(param).then((res) => {
     dispatch(changRecord(res.weekData));
     dispatch(changeLoading(false));
   })
@@ -53,7 +53,7 @@ export const getRecord = (param) => (dispatch) => {
 
 export const getCollect = (param) => (dispatch) => {
   dispatch(changeLoading(true));
-  Request.collect(param).then((res) => {
+  collect(param).then((res) => {
     dispatch(changCollect(res.playlist));
     dispatch(changeLoading(false));
   })

@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import { fromJS } from 'immutable';
-import Request from '../../../api/video';
+import { types, videos } from '../../../api/video';
 
 export const changeVideoList = (data) => ({
   type: actionTypes.CHANGE_VIDEO,
@@ -19,7 +19,7 @@ export const changeLoading = (data) => ({
 
 export const getCurrentVideoList = (id) => (dispatch) => {
   dispatch(changeLoading(true));
-  Request.videos({ id }).then((res) => {
+  videos({ id }).then((res) => {
     dispatch(changeVideoList(res.datas));
     dispatch(changeLoading(false));
   })
@@ -30,7 +30,7 @@ export const getCurrentVideoList = (id) => (dispatch) => {
 
 export const getTypes = () => (dispatch) => {
   dispatch(changeLoading(true));
-  Request.types().then((res) => {
+  types().then((res) => {
     dispatch(changeTypesList(res.data));
   })
     .catch(() => {

@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import { fromJS } from 'immutable';
-import Request from '../../../api/find';
+import { banner, personalized, recommendSongs, dailyRecommendation } from '../../../api/find';
 
 export const changeBannerList = (data) => ({
   type: actionTypes.CHANGE_BANNER,
@@ -28,7 +28,7 @@ export const changeDailyRecommendation = (data) => ({
 });
 
 export const getBannerList = () => (dispatch) => {
-  Request.banner().then((res) => {
+  banner().then((res) => {
     dispatch(changeBannerList(res.banners));
   })
     .catch(() => {
@@ -37,7 +37,7 @@ export const getBannerList = () => (dispatch) => {
 };
 
 export const getRecommendList = () => (dispatch) => {
-  Request.personalized().then((res) => {
+  personalized().then((res) => {
     dispatch(changeRecommendList(res.playlists));
   })
     .catch(() => {
@@ -46,7 +46,7 @@ export const getRecommendList = () => (dispatch) => {
 };
 
 export const getRecommendSongs = () => (dispatch) => {
-  Request.recommendSongs().then((res) => {
+  recommendSongs().then((res) => {
     dispatch(changeRecommendSongs(res.result));
   })
     .catch(() => {
@@ -56,7 +56,7 @@ export const getRecommendSongs = () => (dispatch) => {
 
 export const getDailyRecommendation = () => (dispatch) => {
   dispatch(changeLoading(true))
-  Request.dailyRecommendation().then((res) => {
+  dailyRecommendation().then((res) => {
     dispatch(changeDailyRecommendation(res.recommend));
     dispatch(changeLoading(false))
   })
