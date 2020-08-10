@@ -1,15 +1,14 @@
-import Http from '../axios';
+import Request from '../axios';
 
-const urls = {
-  LOGIN: '/login/cellphone',
-  RECORD: '/user/record',
-  COLLECT: '/user/playlist',
-};
-
-class Request {
-  login = (params) => Http.post(urls.LOGIN, params);
-  record = (params) => Http.post(urls.RECORD, params);
-  collect = (params) => Http.post(urls.COLLECT, params);
+export function loginReq (data) {
+  return Request.post('/login/cellphone', data)
 }
 
-export default new Request();
+export function record (data) {
+  return Request.post('/user/record', data)
+}
+
+export function collect (data) {
+  return Request.post('/user/playlist', data)
+}
+

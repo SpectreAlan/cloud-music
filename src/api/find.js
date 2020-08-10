@@ -1,17 +1,17 @@
-import Http from '../axios';
+import Request from '../axios';
 
-const urls = {
-  BANNER: '/banner',
-  PERSONALIZED: '/top/playlist',
-  RECOMMEND_SONGS: '/personalized/newsong',
-  DailyRecommendation: '/recommend/songs'
-};
-
-class Request {
-  banner = () => Http.post(urls.BANNER);
-  personalized = () => Http.post(urls.PERSONALIZED);
-  recommendSongs = () => Http.post(urls.RECOMMEND_SONGS);
-  dailyRecommendation = () => Http.post(urls.DailyRecommendation);
+export function banner () {
+  return Request.post('/banner')
+}
+export function personalized () {
+  return Request.post('/top/playlist')
 }
 
-export default new Request();
+export function recommendSongs () {
+  return Request.post('/personalized/newsong')
+}
+
+export function dailyRecommendation () {
+  return Request.post('/recommend/songs')
+}
+

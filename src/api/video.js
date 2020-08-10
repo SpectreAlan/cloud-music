@@ -1,13 +1,10 @@
-import Http from '../axios';
+import Request from '../axios';
 
-const urls = {
-  TYPES: '/video/group/list',
-  VIDEO: '/video/group'
-};
-
-class Request {
-  types = () => Http.post(urls.TYPES);
-  videos = (params) => Http.post(urls.VIDEO, params);
+export function types () {
+  return Request.post('/video/group/list')
 }
 
-export default new Request();
+export function videos (data) {
+  return Request.post('/video/group', data)
+}
+
