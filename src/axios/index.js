@@ -1,79 +1,69 @@
-import axios from 'axios';
-import { request } from '../config';
+import axios from 'axios'
+import { request } from '../config'
+import { createHashHistory } from 'history'
+const router = createHashHistory()
 class Request {
   constructor () {
     this.instance = axios.create({
       baseURL: request.baseURL,
-      timeout: request.timeout
-    });
+      timeout: 5000,
+      withCredentials: true
+    })
+    this.instance.interceptors.request.use(
+      (config) => {
+        if (sessionStorage.getItem('req_' + config.baseURL + config.url)) {
+          const msg = '请求已发出，请勿重复点击'
+          return Promise.reject(msg)
+        }
+        sessionStorage.setItem('req_' + config.baseURL + config.url, 'stop')
+        return config
+      },
+      (error) => Promise.reject(error)
+    )
+    this.instance.interceptors.response.use(
+      (response) => {
+        sessionStorage.removeItem('req_' + response.config.url)
+        return response.data
+      },
+      (error) => {
+        sessionStorage.removeItem('req_' + error.response.config.url)
+        if (error.response.status === 301) {
+          router.push('/login')
+        }
+        return Promise.reject(error)
+      }
+    )
   }
 
-  setToken = (token) => {
-    this.instance.defaults.headers.common['Authorization'] = token;
-  };
-
-  authentication = (str) => {
-    let errJson = JSON.parse(str);
-    if (errJson.response && errJson.response.status === 401) {
-      console.error('用户认证出错，正在跳转登录页面！');
-      setTimeout(() => {
-        localStorage.removeItem('persist:root');
-        window.location.href = '/login';
-      }, 1500);
-    }
-  };
-
-  upload (url, formData) {
+  post (url, params = {},) {
     return new Promise((resolve, reject) => {
       this.instance
-        .post(url, formData, {
+        .post(url, params, {
           headers: {
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'application/json;charset=utf-8'
           }
         })
-        .then(({ data }) => {
-          resolve(data);
+        .then((res) => {
+          resolve(res)
         })
         .catch((error) => {
-          let errStr = JSON.stringify(error);
-          this.authentication(errStr);
-          reject(errStr);
-        });
-    });
+          reject(error)
+        })
+    })
   }
 
-  get (url, params = {}) {
+  get (url) {
     return new Promise((resolve, reject) => {
       this.instance
-        .get(url, { params: { ...params } })
-        .then(({ data }) => {
-          resolve(data);
+        .get(url)
+        .then((res) => {
+          resolve(res)
         })
         .catch((error) => {
-          let errStr = JSON.stringify(error);
-          this.authentication(errStr);
-          reject(errStr);
-        });
-    });
-  }
-
-  post (url, params = {}) {
-    return new Promise((resolve, reject) => {
-      this.instance
-        .post(url, { ...params })
-        .then(({ data }) => {
-          resolve(data);
+          reject(error)
         })
-        .catch((error) => {
-          let errStr = JSON.stringify(error);
-          if (url.includes('login')) {
-            reject(errStr);
-          } else {
-            this.authentication(errStr);
-          }
-        });
-    });
+    })
   }
 }
 
-export default new Request();
+export default new Request()
