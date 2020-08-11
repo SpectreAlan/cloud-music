@@ -23,9 +23,6 @@ export const getCurrentVideoList = (id) => (dispatch) => {
     dispatch(changeVideoList(res.datas));
     dispatch(changeLoading(false));
   })
-    .catch(() => {
-      console.log('video数据传输错误');
-    })
 };
 
 export const getTypes = () => (dispatch) => {
@@ -33,7 +30,4 @@ export const getTypes = () => (dispatch) => {
   types().then((res) => {
     dispatch(changeTypesList(res.data));
   })
-    .catch(() => {
-      console.log('类型数据传输错误');
-    })
 };

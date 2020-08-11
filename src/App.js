@@ -6,10 +6,9 @@ import store from './store/';
 import routes from './routes/';
 import Reset from './assets/styles/cssReset'
 import IconFont from './assets/IconFont/iconfont'
-
+import 'antd/dist/antd.css'
 import { saveStore } from './utils/storeRecovery'
 window.onbeforeunload = () => saveStore(store.getState());
-
 function App () {
   return (
     <Provider store={store}>

@@ -31,27 +31,18 @@ export const getBannerList = () => (dispatch) => {
   banner().then((res) => {
     dispatch(changeBannerList(res.banners));
   })
-    .catch(() => {
-      console.log('轮播图数据传输错误');
-    })
 };
 
 export const getRecommendList = () => (dispatch) => {
   personalized().then((res) => {
     dispatch(changeRecommendList(res.playlists));
   })
-    .catch(() => {
-      console.log('推荐歌单数据传输错误');
-    });
 };
 
 export const getRecommendSongs = () => (dispatch) => {
   recommendSongs().then((res) => {
     dispatch(changeRecommendSongs(res.result));
   })
-    .catch(() => {
-      console.log('推荐歌曲数据传输错误');
-    });
 };
 
 export const getDailyRecommendation = () => (dispatch) => {
@@ -60,8 +51,4 @@ export const getDailyRecommendation = () => (dispatch) => {
     dispatch(changeDailyRecommendation(res.recommend));
     dispatch(changeLoading(false))
   })
-    .catch(() => {
-      dispatch(changeLoading(false))
-      console.log('推荐每日歌曲数据传输错误');
-    });
 };

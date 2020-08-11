@@ -35,9 +35,6 @@ export const login = (param, router) => (dispatch) => {
     dispatch(changeState(true));
     router.push('/');
   })
-    .catch(() => {
-      console.log('登陆错误');
-    })
 };
 
 export const getRecord = (param) => (dispatch) => {
@@ -46,9 +43,6 @@ export const getRecord = (param) => (dispatch) => {
     dispatch(changRecord(res.weekData));
     dispatch(changeLoading(false));
   })
-    .catch(() => {
-      console.log('信息获取错误');
-    })
 };
 
 export const getCollect = (param) => (dispatch) => {
@@ -57,7 +51,4 @@ export const getCollect = (param) => (dispatch) => {
     dispatch(changCollect(res.playlist));
     dispatch(changeLoading(false));
   })
-    .catch(() => {
-      console.log('信息获取错误');
-    })
 };

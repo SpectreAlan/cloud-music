@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { request } from '../config'
-import { createHashHistory } from 'history'
-const router = createHashHistory()
+import { message } from 'antd';
+
 class Request {
   constructor () {
     this.instance = axios.create({
@@ -13,6 +13,7 @@ class Request {
       (config) => {
         if (sessionStorage.getItem('req_' + config.baseURL + config.url)) {
           const msg = '请求已发出，请勿重复点击'
+          message.info(msg)
           return Promise.reject(msg)
         }
         sessionStorage.setItem('req_' + config.baseURL + config.url, 'stop')
@@ -22,13 +23,15 @@ class Request {
     )
     this.instance.interceptors.response.use(
       (response) => {
-        sessionStorage.removeItem('req_' + response.config.url)
+        sessionStorage.removeItem('req_' + response.config.baseURL + response.config.url)
         return response.data
       },
       (error) => {
-        sessionStorage.removeItem('req_' + error.response.config.url)
-        if (error.response.status === 301) {
-          router.push('/login')
+        const res = error.response
+        message.error(res.data.msg)
+        sessionStorage.removeItem('req_' + res.config.baseURL + res.config.url)
+        if (res.status === 301) {
+          window.location = '/#/login'
         }
         return Promise.reject(error)
       }
