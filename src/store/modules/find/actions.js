@@ -48,7 +48,7 @@ export const getRecommendSongs = () => (dispatch) => {
 export const getDailyRecommendation = () => (dispatch) => {
   dispatch(changeLoading(true))
   dailyRecommendation().then((res) => {
-    dispatch(changeDailyRecommendation(res.recommend));
+    dispatch(changeDailyRecommendation(res.data.dailySongs));
     dispatch(changeLoading(false))
   })
 };

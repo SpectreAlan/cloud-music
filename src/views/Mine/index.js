@@ -20,12 +20,16 @@ const Mine = () => {
   const my = []
   const other = []
   useEffect(() => {
-    !userRecord.size && dispatch(getRecord({ uid: profile.userId, type: 1 }))
     !userCollect.size && dispatch(getCollect({ uid: profile.userId }))
-    love = collect.shift().coverImgUrl
-    for (let i = 0; i < collect.length; i++) {
-      collect[i]['ordered'] ? other.push(collect[i]) : my.push(collect[i])
+    if (userRecord.size) {
+      love = collect.shift().coverImgUrl
+      for (let i = 0; i < collect.length; i++) {
+        collect[i]['ordered'] ? other.push(collect[i]) : my.push(collect[i])
+      }
+    } else {
+      dispatch(getRecord({ uid: profile.userId, type: 1 }))
     }
+
   }, [])
 
   return (
@@ -46,7 +50,7 @@ const Mine = () => {
                   <h2>我的音乐</h2>
                   <span>
                     更多
-                    <i className='iconfont more'>&#xe63a;</i>
+                    <i className='more'>&gt;</i>
                   </span>
                 </div>
                 <Scroll direction={'horizontal'}>
@@ -61,7 +65,7 @@ const Mine = () => {
                   <h2>最近播放</h2>
                   <span>
                     更多
-                    <i className='iconfont more'>&#xe63a;</i>
+                    <i className='more'>&gt;</i>
                   </span>
                 </div>
                 <Scroll direction={'horizontal'}>

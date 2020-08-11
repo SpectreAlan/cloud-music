@@ -45,6 +45,7 @@ export const Content = styled.div`
       }
       h2{
         line-height: 1.6rem;
+        color: #fff;
         }
       span{
         font-size: 0.6rem;
@@ -66,6 +67,14 @@ export const Content = styled.div`
         i{
           font-size: 1.4rem;
         }
+      }
+    }
+    .list{
+      background: #fff;
+      color: #000;
+      .play{
+        color: #fff;
+        font-size: 0.8rem;
       }
     }
   }
@@ -92,7 +101,7 @@ export const Item = styled.li`
       font-size: 0.8rem;
     }
     .more{
-      transform: rotate(90deg);
+      font-weight: bold;
     }
     h2{
       span{

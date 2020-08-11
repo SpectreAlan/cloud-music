@@ -46,13 +46,15 @@ export const Content = styled.div`
         border: 1px solid gray;
         outline: none;
         border-radius: 0.2rem;
-        width: 10rem;
+        width: 12rem;
         padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+        color: #000;
+        font-size: 0.8rem;
       }
       button{
         border: 1px solid #fff;
         outline: none;
-        border-radius: 0.2rem;
+        border-radius: 0.3rem;
         padding: 0.4rem;
         width: 12rem;
         background: ${style['theme-color']};
@@ -61,7 +63,7 @@ export const Content = styled.div`
       i{
         position: absolute;
         color: gray;
-        top: 0.4rem;
+        top: 0.6rem;
         left: 1.4rem;
       }
     }

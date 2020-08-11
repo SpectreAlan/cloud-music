@@ -16,21 +16,21 @@ const DailyRecommendation = () => {
   useEffect(() => {
     !dailyRecommendationList.size && dispatch(getDailyRecommendation())
   }, [])
-
   const Recommendation = dailyRecommendationList.size ? dailyRecommendationList.toJS() : []
   const list = []
   let img = ''
+  console.log(Recommendation)
   Recommendation.map((k) => {
     const o = {}
     o.name = k.name
-    o.artists = k.artists.map((k, i) => (i === 0 ? '' : '、') + k.name)
-    o.album = k.album.name
-    o.img = k.album.picUrl
+    o.artists = k.ar.map((k, i) => (i === 0 ? '' : '、') + k.name)
+    o.album = k.al.name
+    o.img = k.al.picUrl
     list.push(o)
-    img = Recommendation[1].album.blurPicUrl
+    img = Recommendation[1].al.picUrl
   })
   const time = new Date()
-  Recommendation.length > 0 && Recommendation[1].album.blurPicUrl
+  Recommendation.length > 0 && Recommendation[1].al.picUrl
   const onScroll = useCallback((pos) => {
     const y = pos.y
     control.current.style.top = y / 19 + 9.7 + 'rem'

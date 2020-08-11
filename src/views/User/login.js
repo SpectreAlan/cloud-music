@@ -18,7 +18,7 @@ const Login = () => {
     <Content>
       <div className="top">
         <i className='iconfont back' onClick={() => router.go(-1)}>&#xe63a;</i>
-        <span>Login with mobile</span>
+        <span>手机号登陆</span>
       </div>
       <ul className="container">
         <li>
