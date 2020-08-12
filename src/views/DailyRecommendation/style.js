@@ -57,9 +57,8 @@ export const Bg = styled.div`
   width: 100%;
   z-index: 6;
   overflow: hidden;
-  img{
-    width: 100%;
-  }
+  background: url(${(props) => props.img}) no-repeat;
+  background-size: cover;
 `
 export const Content = styled.div`
   position: fixed;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { getDailyRecommendation } from '../../store/modules/find/actions'
 import { Top, Content, Bg, Control } from './style'
 import Scroll from '../../components/Scroll';
@@ -12,6 +13,7 @@ const DailyRecommendation = () => {
   const txt = useRef()
   const head = useRef()
   const dispatch = useDispatch()
+  const router = useHistory()
   const dailyRecommendationList = useSelector((state) => state.getIn(['find', 'dailyRecommendationList']))
   useEffect(() => {
     !dailyRecommendationList.size && dispatch(getDailyRecommendation())
@@ -27,7 +29,7 @@ const DailyRecommendation = () => {
     o.album = k.al.name
     o.img = k.al.picUrl
     list.push(o)
-    img = Recommendation[1].al.picUrl
+    img = Recommendation[0].al.picUrl
   })
   const time = new Date()
   Recommendation.length > 0 && Recommendation[1].al.picUrl
@@ -38,6 +40,8 @@ const DailyRecommendation = () => {
       bg.current.style.transform = 'scale(' + (100 + y) / 100 + ')'
     } else {
       txt.current.style.opacity = 1 - (100 + y) / 100
+      head.current.style['background'] = 'rgba(0,0,0,0.4)'
+      head.current.style['color'] = '#fff'
       if (y / 19 < -6.6) {
         control.current.style.top = '3rem'
         bg.current.style.height = '3rem'
@@ -55,14 +59,12 @@ const DailyRecommendation = () => {
     <>
       <Top ref={head}>
         <div className='topContent'>
-          <i className='iconfont'>&#xe63a;</i>
+          <i className='iconfont' onClick={() => router.push('/find')}>&#xe63a;</i>
           <span ref={txt}>每日推荐</span>
           <div className="circle"/>
         </div>
       </Top>
-      <Bg ref={bg}>
-        <img src={img} alt=""/>
-      </Bg>
+      <Bg ref={bg} img={img} />
       <Control ref={control}>
         <div className='item'>
           <i className='iconfont'>&#xe774;</i>

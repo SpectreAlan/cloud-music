@@ -29,18 +29,6 @@ const Home = (props) => {
             <span> 我的 </span>
           </div>
         </NavLink>
-        <NavLink to="/cloud" activeClassName="selected">
-          <div>
-            <i className='iconfont'>&#xe600;</i>
-            <span> 云村 </span>
-          </div>
-        </NavLink>
-        <NavLink to="/account" activeClassName="selected">
-          <div>
-            <i className='iconfont'>&#xe66c;</i>
-            <span> 账号 </span>
-          </div>
-        </NavLink>
       </Tab>
       {renderRoutes(route.routes)}
     </>
