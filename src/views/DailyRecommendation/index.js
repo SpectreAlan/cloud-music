@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getDailyRecommendation } from '../../store/modules/find/actions'
-import { Top, Content, Bg, Control } from './style'
+import { Top, Content, Bg, Control, Container } from './style'
 import Scroll from '../../components/Scroll';
 import ScrollList from './ScrollList';
 
@@ -21,7 +21,6 @@ const DailyRecommendation = () => {
   const Recommendation = dailyRecommendationList.size ? dailyRecommendationList.toJS() : []
   const list = []
   let img = ''
-  console.log(Recommendation)
   Recommendation.map((k) => {
     const o = {}
     o.name = k.name
@@ -33,16 +32,15 @@ const DailyRecommendation = () => {
   })
   const time = new Date()
   Recommendation.length > 0 && Recommendation[1].al.picUrl
-  const onScroll = useCallback((pos) => {
+  const onScroll = useCallback((pos) => { // 页面滚动
     const y = pos.y
     control.current.style.top = y / 19 + 9.7 + 'rem'
-    if (y > 0) {
+    if (y > 0) { // 滚动到顶部
       bg.current.style.transform = 'scale(' + (100 + y) / 100 + ')'
-    } else {
+    } else { // 下滑
       txt.current.style.opacity = 1 - (100 + y) / 100
-      head.current.style['background'] = 'rgba(0,0,0,0.4)'
       head.current.style['color'] = '#fff'
-      if (y / 19 < -6.6) {
+      if (y / 19 < -6.6) { // 吸顶
         control.current.style.top = '3rem'
         bg.current.style.height = '3rem'
         bg.current.style['z-index'] = 7
@@ -75,16 +73,18 @@ const DailyRecommendation = () => {
           <span>多选</span>
         </div>
       </Control>
-      <Scroll onScroll={onScroll}>
-        <Content ref={listRef} >
-          <div className="out">
-            <div className="date">
-              {time.getMonth()}<span>/{time.getDay()}</span>
+      <Container ref={listRef}>
+        <Scroll onScroll={onScroll}>
+          <Content >
+            <div className="out">
+              <div className="date">
+                {time.getMonth()}<span>/{time.getDay()}</span>
+              </div>
+              <ScrollList list={list} />
             </div>
-            <ScrollList list={list} />
-          </div>
-        </Content>
-      </Scroll>
+          </Content>
+        </Scroll>
+      </Container>
     </>
   )
 }
