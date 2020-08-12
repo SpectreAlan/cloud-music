@@ -6,7 +6,8 @@ import { getCount } from '../../utils'
 import LazyLoad, { forceCheck } from 'react-lazyload';
 
 const RecommendSongLists = (props) => {
-  const { list, title } = props
+  let { list, title } = props
+  list = list.splice(0, 9)
   return (
     <>
       <Top>
@@ -27,6 +28,7 @@ const RecommendSongLists = (props) => {
                   <span>{getCount(item.playCount)}</span>
                 </div>
                 <LazyLoad
+                  overflow
                   placeholder={<img width="100%" height="100%" src={require('../../assets/images/lazy.png')} alt="music"/>}
                 >
                   <img src={item.coverImgUrl} width="100%" height="100%" alt="music"/>

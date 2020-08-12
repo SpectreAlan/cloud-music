@@ -5,6 +5,7 @@ import { getDailyRecommendation } from '../../store/modules/find/actions'
 import { Top, Content, Bg, Control, Container } from './style'
 import Scroll from '../../components/Scroll';
 import ScrollList from './ScrollList';
+import { forceCheck } from 'react-lazyload';
 
 const DailyRecommendation = () => {
   const listRef = useRef()
@@ -33,6 +34,7 @@ const DailyRecommendation = () => {
   const time = new Date()
   Recommendation.length > 0 && Recommendation[1].al.picUrl
   const onScroll = useCallback((pos) => { // 页面滚动
+    forceCheck()
     const y = pos.y
     control.current.style.top = y / 19 + 9.7 + 'rem'
     if (y > 0) { // 滚动到顶部

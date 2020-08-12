@@ -22,14 +22,13 @@ export const Top = styled.div`
 export const Container = styled.ul`
   padding: 0.5rem;
   display: flex;
-  flex-wrap: nowrap;
-  width: ${(props) => props.count * 5.4 + 'rem'};
-  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: space-between;
   li{
-    width: 5rem;
+    width: 6rem;
     position: relative;
-    margin-right: 0.4rem;
     font-size: 0.8rem;
+    margin-top: 0.4rem;
     .play{
       text-align: right;
       position: absolute;
@@ -48,8 +47,8 @@ export const Container = styled.ul`
       }
     }
     img{
-      width: 5rem;
-      height: 5rem;
+      width: 6rem;
+      height: 6rem;
       border-radius: 0.4rem;
     }
     &>span{
