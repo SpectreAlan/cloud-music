@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import style from '../../assets/styles/global-style';
 
 export const Top = styled.div`
   height:3rem;
@@ -9,7 +8,7 @@ export const Top = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0.4rem 0.6rem;
-  background: rgb(22,22,22);
+  background: #ff2d21;
   &>i {
     color: #fff;
     font-size: 1.2rem;
@@ -23,7 +22,7 @@ export const Top = styled.div`
 `;
 
 export const Content = styled.div`
-  background: rgb(22,22,22);
+  background: #fff;
   position: fixed;
   top: 3rem;
   left: 0;
@@ -33,8 +32,8 @@ export const Content = styled.div`
   z-index: 10;
   overflow: hidden;
   .container{
-    background: rgb(22,22,22);
-    color: #fff;
+    background: #fff;
+    color: #000;
     .info{
       padding: 0.8rem;
       display: flex;
@@ -45,76 +44,15 @@ export const Content = styled.div`
       }
       h2{
         line-height: 1.6rem;
-        color: #fff;
         }
       span{
         font-size: 0.6rem;
       }
     }
-    .buttons{
-      padding: 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      margin: 0.5rem 0;
-      li{
-        width: 4rem;
-        text-align: center;
-        span{
-          display: block;
-          font-size: 0.8rem;
-          margin-top: 0.2rem;
-        }
-        i{
-          font-size: 1.4rem;
-        }
-      }
-    }
-    .list{
-      background: #fff;
-      color: #000;
-      .play{
-        color: #fff;
-        font-size: 0.8rem;
-      }
-    }
   }
-`
-export const ScrollList = styled.div`
-  display: flex;
-  padding: 0.4rem;
-  width: ${(props) => props.len * 13 + 'rem'}
 `
 export const CollectList = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 0.4rem;
-`
-
-export const Item = styled.li`
-  margin-bottom: 0.4rem;
-  .title{
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 0.4rem;
-    font-size: 1rem;
-    span{
-      font-size: 0.8rem;
-    }
-    .more{
-      font-weight: bold;
-    }
-    h2{
-      span{
-        margin-right: 0.6rem;
-        font-size: 1rem;
-        &.normal{
-          color: grey;
-        }
-        &.active{
-          color: #fff;
-          }
-        }
-      }
-      
-  }
 `
