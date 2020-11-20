@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Top } from '../RecommendSongLists/style'
 import { List } from './style'
 import LazyLoad from 'react-lazyload';
+
 const RecommendSongs = (props) => {
   const { list, title } = props
   return (

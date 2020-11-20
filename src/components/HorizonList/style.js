@@ -5,6 +5,7 @@ export const Container = styled.ul`
   line-height: 2rem;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: space-around;
   li{
     text-align: center;
     font-size: 0.8rem;

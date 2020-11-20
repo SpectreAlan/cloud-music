@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc130ed4-f2c7-42d5-944d-1e7ebcb24e5c" name="Default Changelist" comment="修改store">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/axios/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/find/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/find/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/user/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/user/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/video/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/video/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HorizonList/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HorizonList/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RecommendSongs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RecommendSongs/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +27,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cloud-music-ts" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
@@ -58,6 +55,22 @@
       <updated>1597064127334</updated>
       <workItem from="1597064128946" duration="3815000" />
       <workItem from="1597144279338" duration="3188000" />
+      <workItem from="1597229871908" duration="8000" />
+      <workItem from="1604117507891" duration="1343000" />
+      <workItem from="1604131106069" duration="7233000" />
+      <workItem from="1604209768885" duration="9000" />
+      <workItem from="1604475154455" duration="625000" />
+      <workItem from="1604639605094" duration="5843000" />
+      <workItem from="1604989885337" duration="711000" />
+      <workItem from="1604992043799" duration="1196000" />
+      <workItem from="1605074320441" duration="11172000" />
+      <workItem from="1605152760983" duration="55000" />
+      <workItem from="1605152827082" duration="5472000" />
+      <workItem from="1605181125513" duration="804000" />
+      <workItem from="1605244286114" duration="2204000" />
+      <workItem from="1605248529749" duration="7375000" />
+      <workItem from="1605505018448" duration="25912000" />
+      <workItem from="1605702926922" duration="3418000" />
     </task>
     <task id="LOCAL-00001" summary="修改axios">
       <created>1597064158649</created>
@@ -93,33 +106,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改store" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597064247463">
+    <state x="558" y="23" key="CommitChangelistDialog2" timestamp="1605850136385">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1597064247463" />
-    <state x="558" y="23" key="CommitChangelistDialog2" timestamp="1597123519828">
+    <state x="558" y="23" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1605850136385" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1605850135010">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="558" y="23" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1597123519828" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1597147469688">
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605850135010" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1604144575186">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1597147469688" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1597147469688">
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1604144575186" />
+    <state x="663" y="212" width="594" height="626" key="find.popup" timestamp="1605850089975">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1597147469688" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1597147469688">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1597147469688" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1597147469688">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1597147469688" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1597064222969">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1597064222969" />
+    <state x="663" y="212" width="594" height="626" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1605850089975" />
   </component>
 </project>
