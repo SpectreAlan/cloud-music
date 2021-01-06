@@ -139,7 +139,7 @@
   },
   "devDependencies": {
     "antd": "^4.5.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "better-scroll": "^1.15.2",
     "history": "^5.0.0",
     "immutable": "^4.0.0-rc.12",
